@@ -14,13 +14,17 @@ namespace Co_Contra_Variance
             IPushable<Animal> pushAnimal = animal;
             IPushable<Bear> pushBear = pushAnimal;
 
+            pushAnimal.Push(new Animal("A1"));
             pushBear.Push(new Bear("B1"));
             pushBear.Push(new Bear("B2"));
+            
+
+            
 
             IPoppable<Animal> popAnimal = animal;
-            for (int i = 0; i <= animal.Count; i++)
+            while(animal.Count>0){
                 Console.WriteLine(popAnimal.Pop().Name.ToString());
-
+            }
             Console.ReadLine();
 
 
